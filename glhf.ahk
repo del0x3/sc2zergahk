@@ -1,51 +1,46 @@
 #Requires AutoHotkey v2.0
-; Горячая клавиша: Ctrl+G
+; Hotkey: Ctrl+G
 ^g::
 {
-    Send("{Enter}") ; Открыть чат
+    Send("{Enter}") ; Open chat
     Sleep(50)
-    Send("Good Luck, Have Fun.") ; Написать сообщение 'gl hf!' (Good Luck, Have Fun!)
+    Send("Good Luck, Have Fun.") ; Type 'gl hf!' message
     Sleep(50)
-    Send("{Enter}") ; Отправить сообщение
+    Send("{Enter}") ; Send message
     return
 }
-; Боковая кнопка XButton1: Нажимать 5, затем удерживать q, пока кнопка удерживается
+
+; Side button XButton1: Press 5, then hold Q while button is pressed
 XButton1::
 {
-    SendEvent("{5}") ; Нажать "5" один раз
-    Sleep(1) ; Короткая задержка для обработки
-
-    ; Удерживать "q" пока кнопка не отпущена
+    SendEvent("{5}") ; Press "5" once
+    Sleep(1) ; Short delay for processing
+    ; Hold "q" until button is released
     while GetKeyState("XButton1", "P")
     {
-        SendEvent("{q down}") ; Удерживать "q"
-        Sleep(50) ; Небольшая задержка
+        SendEvent("{q down}") ; Hold "q"
+        Sleep(50) ; Small delay
     }
-
-    SendEvent("{q up}") ; Отпустить "q", когда кнопка отпущена
+    SendEvent("{q up}") ; Release "q" when button is released
     return
 }
-; Боковая кнопка XButton2: Нажать 4, удержать Shift, нажать X, кликнуть мышью в точке курсора, затем нажать Space
 
-; Боковая кнопка XButton2: Нажать 4, удержать Shift, нажать X, кликнуть мышью в точке курсора, затем нажать Space
+; Side button XButton2: Press 4, hold Shift, press X, click mouse at cursor position, then press Space
 XButton2::
 {
-    SendEvent("{4}") ; Нажать "4"
-    Sleep(10) ; Задержка
-
-    ; Пока зажата XButton2, выполняем цикл
+    SendEvent("{4}") ; Press "4"
+    Sleep(10) ; Delay
+    ; While XButton2 is held, execute loop
     while GetKeyState("XButton2", "P")
     {
-        SendEvent("{x}") ; Нажать "X"
-        Sleep(10) ; Задержка
-
-        ; Клик мышью
-        MouseClick("left") ; Клик левой кнопкой мыши
-        Sleep(10) ; Задержка
-
-        ; Нажать пробел
-        SendEvent("{Space}") ; Нажать "Space"
-        Sleep(10) ; Задержка между действиями
+        SendEvent("{x}") ; Press "X"
+        Sleep(10) ; Delay
+        ; Mouse click
+        MouseClick("left") ; Left mouse click
+        Sleep(10) ; Delay
+        ; Press space
+        SendEvent("{Space}") ; Press "Space"
+        Sleep(10) ; Delay between actions
     }
     return
 }
