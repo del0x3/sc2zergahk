@@ -1,7 +1,8 @@
 # StarCraft 2 Zerg Hotkeys AutoHotkey Script
 This AutoHotkey script provides custom hotkey combinations for Zerg players in StarCraft 2, automating common actions and improving gameplay efficiency.
 Features
-![Demo]([https://imgur.com/RrB0UvB](https://i.imgur.com/RrB0UvB.gif))
+
+![Demo](https://i.imgur.com/RrB0UvB.gif)
 
 **Quick Chat Greeting (Ctrl+G)**
 
